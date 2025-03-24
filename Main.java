@@ -1,14 +1,15 @@
-public class Main {
+class Main {
     public static void main(String[] args) {
-        Aluno aluno = new Aluno();
+        Curso poo = new Curso("POO");
+        Curso arq = new Curso("Arquitetura de computadores");
+        Curso alg = new Curso("Álgebra linear");
 
-        aluno.adicionarNota(10);
-        aluno.adicionarNota(5);
-        aluno.adicionarNota(7);
+        Aluno aluno = new Aluno("Nicolas Marcelino", 5);
 
-        aluno.setNome("Ronna R. Madison");
-        aluno.setMatricula(3971406);
+        aluno.adcCurso(poo);
+        aluno.adcCurso(arq);
+        aluno.adcCurso(alg);
 
-        aluno.exibirInformacoes();
+        aluno.listarCursos();
     }
 }

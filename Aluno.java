@@ -1,48 +1,27 @@
-import java.util.Scanner;
+class Aluno {
+    String nome;
+    Curso[] cursos;
+    int n;
 
-public class Aluno {
-    private String nome;
-    private long matricula;
-    private double[] notas;
-
-    public Aluno() {
-        this.nome = "";
-        this.matricula = 0;
-        this.notas = new double[3];
+    Aluno(String nome, int max) {
+        this.nome = nome;
+        this.cursos = new Curso[max];
+        this.n = 0;
     }
 
-    public void adicionarNota(double nota) {
-        Scanner read = new Scanner(System.in);
-        
-        System.out.print("Digite a AV (1, 2 ou 3): ");
-        int av = read.nextInt();
-        
-        this.notas[av-1] = nota;
+    void adcCurso(Curso c) {
+        if (n < cursos.length) {
+            cursos[n++] = c;
+        } else {
+            System.out.print("O aluno não pode mais se inscrever em outros cursos");
+        }
     }
 
-    public double calcularMedia() {
-        return (this.notas[0]+this.notas[1]+this.notas[2])/3;
-    }
-
-    public void exibirInformacoes() {
-        System.out.println("Matrícula: "+getMatricula());
-        System.out.println("Nome: "+getNome());
-        System.out.print("Média: "+calcularMedia());
-    }
-
-    public void setNome(String n) {
-        this.nome = n;
-    }
-
-    public String getNome() {
-        return this.nome;
-    }
-
-    public void setMatricula(long m) {
-        this.matricula = m;
-    }
-
-    public long getMatricula() {
-        return this.matricula;
+    void listarCursos() {
+        for (Curso c : cursos) {
+            if (c != null) {
+                System.out.println(c.nome);
+            }
+        }
     }
 }
