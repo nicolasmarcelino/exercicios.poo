@@ -1,0 +1,3 @@
+interface Vendavel {
+    double calcularPrecoFinal();
+}
